@@ -1,0 +1,79 @@
+﻿@model Product
+@{
+  ViewData["Title"] = "Edit Product " + Model.Name;
+}
+
+<div class="overview">
+  <div class="title">
+    <i class="uil uil-tachometer-fast-alt"></i>
+    <span class="text">Editing Product <span class="text-primary">@Model.Name</span></span>
+  </div>
+
+  <div>
+    <form asp-action="EditProduct" method="POST" class="row">
+      <div class="mb-3">
+        <input type="hidden"
+               asp-for="Id"
+               value="@Model.Id" />
+
+        <label asp-for="Name" class="form-label">Product Name</label>
+        <input type="text"
+               asp-for="Name"
+               value="@Model.Name"
+               class="form-control"
+							 placeholder="e.g. Awesome Hoodie" />
+      </div>
+      <div class="mb-3">
+        <label asp-for="Description" class="form-label">Product Description</label>
+        <textarea type="text"
+                  asp-for="Description"
+                  value="@Model.Description"
+                  class="form-control"
+									placeholder="e.g. It has nice material"></textarea>
+      </div>
+      <div class="mb-3 col-lg-6">
+        <label asp-for="Quantity" class="form-label">Product Quantity</label>
+        <input type="number"
+               asp-for="Quantity"
+               value="@Model.Quantity"
+               class="form-control"
+               placeholder="How many pieces are there" />
+      </div>
+      <div class="mb-3 col-lg-6">
+        <label asp-for="Price" class="form-label">Product Price</label>
+        <input type="number"
+               asp-for="Price"
+               value="@Model.Price"
+               class="form-control"
+               placeholder="How much for a piece" />
+      </div>
+      <div class="mb-3 col-lg-12 d-flex align-items-center mt-4">
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox"
+                 asp-for="EnableSize" value="@Model.EnableSize" />
+          <label class="form-check-label" asp-for="EnableSize">
+            Enable Product Size
+          </label>
+        </div>
+      </div>
+
+      <div class="mb-3 col-lg-6">
+        <label asp-for="company.Id" class="form-label">company</label>
+        <select class="form-select" asp-for="company.Id" value="@Model.company.Id">
+          <option >Select one</option>
+          <option value="1">nike</option>
+          <option value="2">adidas</option>
+        </select>
+      </div>
+
+      <div class="mb-3 col-lg-5 d-flex align-items-center mt-lg-4">
+        <input class="form-control" type="file" id="formFile" />
+      </div>
+
+      <div class="col-lg-12 d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+﻿@model List<Product>
+@{
+  ViewData["Title"] = "View All Products";
+}
+<div class="overview">
+  <div class="title">
+    <i class="uil uil-tachometer-fast-alt"></i>
+    <span class="text">All Product</span>
+  </div>
+</div>
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td class="table-light">id</td>
+        <td class="table-light">Name</td>
+        <td class="table-light">Description</td>
+        <td class="table-light">price</td>
+        <td class="table-light">Quantity</td>
+        <td class="table-light">operation</td>
+      </tr>
+    </thead>
+    <tbody>
+      @{
+        if(Model.Count == 0)
+        {
+          <tr>
+            <td colspan="6">
+              <p class="my-auto fs-6 text-center">No Product Found</p>
+            </td>
+          </tr>
+        } else
+        {
+          foreach (Product product in Model)
+          {
+            <tr>
+              <td>@product.Id</td>
+              <td>@product.Name</td>
+              <td>@product.Description</td>
+              <td>@product.Price</td>
+              <td>@product.Quantity</td>
+              <td>
+                <a asp-action="EditProduct" asp-route-productId="@product.Id" class="btn btn-success" role="button">
+                  <span class="material-symbols-outlined"> Edit </span>
+                </a>
+                <a asp-action="DeleteProduct" asp-route-productId="@product.Id" class="btn btn-danger " role="button">
+                  <span class="material-symbols-outlined"> delete </span>
+                </a>
+              </td>
+            </tr>
+          }
+        }
+      }
+    </tbody>
+  </table>
+</div>

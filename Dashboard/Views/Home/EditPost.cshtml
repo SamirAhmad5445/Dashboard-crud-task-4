@@ -1,0 +1,64 @@
+﻿@model Post
+@{
+  ViewData["Title"] = "Edit Post " + Model.Title;
+}
+
+<div class="overview">
+  <div class="title">
+    <i class="uil uil-tachometer-fast-alt"></i>
+    <span class="text">Editing post <span class="text-primary">@Model.Title</span></span>
+  </div>
+
+  <div>
+    <form asp-action="EditPost" method="POST" class="row">
+      <input type="hidden"
+             asp-for="Id"
+             value="@Model.Id" />
+      <div class="mb-3">
+        <label asp-for="Title" class="form-label">Post Title</label>
+        <input type="text"
+               asp-for="Title"
+               value="@Model.Title"
+               class="form-control"
+               placeholder="e.g. Awsome Story" />
+      </div>
+      <div class="mb-3">
+        <label asp-for="Description" class="form-label">Post Description</label>
+        <textarea type="text"
+                  asp-for="Description"
+                  value="@Model.Description"
+                  class="form-control"
+                  placeholder="e.g. It has nice Plot"></textarea>
+      </div>
+      <div class="mb-3">
+        <label asp-for="Author" class="form-label">Author Name</label>
+        <input type="text"
+               asp-for="Author"
+               value="@Model.Author"
+               class="form-control"
+               placeholder="e.g. John Doe" />
+      </div>
+
+
+      <div class="mb-3 col-lg-6">
+        <label asp-for="Category" class="form-label">Category</label>
+        <select class="form-select" asp-for="Category" value="@Model.Category">
+          <option selected>Select one</option>
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
+          <option value="javascript">Javascript</option>
+          <option value="react">React</option>
+          <option value="c#">C#</option>
+        </select>
+      </div>
+
+      <div class="mb-3 col-lg-5 d-flex align-items-center mt-lg-4">
+        <input class="form-control" asp-for="Date" type="Date" value="@Model.Date" id="formFile" />
+      </div>
+
+      <div class="col-lg-12 d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
