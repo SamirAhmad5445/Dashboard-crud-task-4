@@ -90,7 +90,7 @@ namespace Dashboard.Controllers
         id = 1;
       } else
       {
-        id = _posts.Max(p => p.Id);
+        id = _posts.Max(p => p.Id) + 1;
       }
       newPost.Id = id;
       _posts.Add(newPost);
