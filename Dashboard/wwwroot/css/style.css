@@ -553,14 +553,25 @@ nav.close ~ .dashboard .top {
 
 .post-category {
 	position: absolute;
-	top: 0.5rem;
-	left: 0.5rem;
+	top: 0;
+	left: 0;
+	border-radius: 0;
+	border-bottom-right-radius: 1.25rem;
+	pointer-events: none;
 }
 
 .post-actions {
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 200ms ease-out;
+}
+
+.post:hover .post-actions {
+	opacity: 1;
+	pointer-events: unset;
 }
 
 .post > * + * {
