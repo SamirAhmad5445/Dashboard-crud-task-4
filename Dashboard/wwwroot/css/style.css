@@ -533,6 +533,19 @@ nav.close ~ .dashboard .top {
 		}
 }
 
+.actions {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.25rem;
+	align-items: center;
+	margin-block: auto;
+	height: 100%;
+}
+
+.actions > * {
+	max-width: 2.75rem;
+}
+
 .posts-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));

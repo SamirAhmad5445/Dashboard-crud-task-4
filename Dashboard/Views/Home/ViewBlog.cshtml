@@ -24,13 +24,17 @@
         <div class="post">
           <div class="post-actions">
             <a asp-action="EditPost" asp-route-postId="@post.Id" class="btn btn-success" role="button">
-              <span class="material-symbols-outlined"> Edit </span>
+              <span class="material-symbols-outlined">
+                <i class="uil uil-edit"></i>
+              </span>
             </a>
             <a asp-action="DeletePost" asp-route-postId="@post.Id" class="btn btn-danger " role="button">
-              <span class="material-symbols-outlined"> delete </span>
+              <span class="material-symbols-outlined">
+                <i class="uil uil-trash-alt"></i>
+              </span>
             </a>
           </div>
-          <span class="post-category btn btn-secondary">@post.Category</span>
+          <span class="post-category btn btn-secondary">@post.category.Name</span>
           <figure class="post-image"></figure>
           <h3 class="post-title">@post.Title</h3>
           <p class="post-desc">@post.Description</p>
