@@ -17,6 +17,7 @@
                asp-for="Title"
                class="form-control"
                placeholder="e.g. Awsome Story" />
+        <span asp-validation-for="Title" class="text-danger fw-bold"></span>
       </div>
       <div class="mb-3">
         <label asp-for="Description" class="form-label">Post Description</label>
@@ -24,6 +25,8 @@
                   asp-for="Description"
                   class="form-control"
                   placeholder="e.g. It has nice Plot"></textarea>
+        <span asp-validation-for="Description" class="text-danger fw-bold"></span>
+
       </div>
       <div class="mb-3">
         <label asp-for="Author" class="form-label">Author Name</label>
@@ -31,6 +34,8 @@
                asp-for="Author"
                class="form-control"
                placeholder="e.g. John Doe" />
+        <span asp-validation-for="Author" class="text-danger fw-bold"></span>
+
       </div>
       
       
@@ -44,10 +49,13 @@
           <option value="5">Comedy</option>
           <option value="5">Sci-Fi</option>
         </select>
+        <span asp-validation-for="CategoryId" class="text-danger fw-bold"></span>
       </div>
 
       <div class="mb-3 col-lg-5 d-flex align-items-center mt-lg-4">
         <input class="form-control" asp-for="Date" type="Date" id="formFile" />
+        <span asp-validation-for="Date" class="text-danger fw-bold"></span>
+
       </div>
 
       <div class="col-lg-12 d-flex justify-content-center">

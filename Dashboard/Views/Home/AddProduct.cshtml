@@ -17,6 +17,7 @@
                asp-for="Name"
                class="form-control"
                placeholder="e.g. Awsome Hoodie" />
+        <span asp-validation-for="Name" class="text-danger fw-bold"></span>
       </div>
       <div class="mb-3">
         <label asp-for="Description" class="form-label">Product Description</label>
@@ -24,6 +25,7 @@
                   asp-for="Description"
                   class="form-control"
                   placeholder="e.g. It has nice material"></textarea>
+        <span asp-validation-for="Description" class="text-danger fw-bold"></span>
       </div>
       <div class="mb-3 col-lg-6">
         <label asp-for="Quantity" class="form-label">Product Quantity</label>
@@ -31,6 +33,7 @@
                asp-for="Quantity"
                class="form-control"
                placeholder="How many pieces are there" />
+        <span asp-validation-for="Quantity" class="text-danger fw-bold"></span>
       </div>
       <div class="mb-3 col-lg-6">
         <label asp-for="Price" class="form-label">Product Price</label>
@@ -38,6 +41,7 @@
                asp-for="Price"
                class="form-control"
                placeholder="How much for a piece" />
+        <span asp-validation-for="Price" class="text-danger fw-bold"></span>
       </div>
       <div class="mb-3 col-lg-12 d-flex align-items-center mt-4">
         <div class="form-check">
