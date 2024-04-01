@@ -78,7 +78,6 @@ namespace Dashboard.Controllers
       _db.SaveChanges();
 
       return RedirectToAction("ViewProduct");
-
     }
     #endregion
 
@@ -156,8 +155,6 @@ namespace Dashboard.Controllers
 			return RedirectToAction("ViewBlog");
     }
     #endregion
-
-
   }
 }
 

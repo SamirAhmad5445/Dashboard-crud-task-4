@@ -1,11 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace Dashboard.Models
+namespace Dashboard.Models.DTO
 {
-  public class Post
+  public class PostDTO
   {
-    [Key]
     public int Id { get; set; }
     [Required]
     [RegularExpression(@"[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Invalid Title")]
@@ -17,10 +16,6 @@ namespace Dashboard.Models
     [Required]
     public string Author { get; set; }
     [Required]
-    public string? Date { get; set; }
-    [Required]
-    public int CategoryId { get; set; }
-    [ForeignKey("CategoryId")]
     public Category? category { get; set; }
-   }
+  }
 }
